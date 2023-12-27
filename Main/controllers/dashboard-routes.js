@@ -12,6 +12,9 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
+    //rendering all the posts for the logged-in user. It uses the Post model to fetch all
+     // the posts associated with the current user's userId.
+
     res.render('all-posts-admin', {
       layout: 'dashboard',
       posts,
@@ -21,11 +24,15 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+// rendering the form to create a new post. It renders the new-post view, along with the dashboard layout.
+
 router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
     layout: 'dashboard',
   });
 });
+
+// Defining a GET route for '/edit/:id' using the Express.js router.
 
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
