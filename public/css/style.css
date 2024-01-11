@@ -42,7 +42,7 @@ h2 a {
 }
 
 header {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 main {
@@ -117,7 +117,7 @@ input {
 
 .hero {
   padding: 3% 4%;
-  background-color: var(--dark);
+  background-color: #010e0a;
   color: var(--primary);
 }
 
@@ -126,7 +126,7 @@ input {
 }
 
 .app-title {
-  font-size: 3rem;
+  font-size: 6rem;
   background-color: var(--primary);
   color: var(--dark);
   padding: 0 10px;
