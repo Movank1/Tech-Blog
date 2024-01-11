@@ -15,7 +15,8 @@ router.get('/', withAuth, async (req, res) => {
     //rendering all the posts for the logged-in user. It uses the Post model to fetch all
      // the posts associated with the current user's userId.
 
-    res.render('all-posts-admin', {
+
+     res.render('all-posts-admin', {
       layout: 'dashboard',
       posts,
     });
@@ -26,9 +27,12 @@ router.get('/', withAuth, async (req, res) => {
 
 // rendering the form to create a new post. It renders the new-post view, along with the dashboard layout.
 
+
+const withAuth = require('./middleware/withAuth');
+
 router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
-    layout: 'dashboard',
+    layout: 'dashboard'
   });
 });
 
