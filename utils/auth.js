@@ -1,9 +1,7 @@
-const withAuth = (req, res, next) => {
-  if (!req.session.userId) {
-    res.redirect("/login");
-  } else {
-    next();
-  }
-};
 
-module.exports = withAuth;
+import withAuth from './withAuth';
+
+app.get('/protected', withAuth, (req, res) => {
+  // This route handler will only be executed if the user is authenticated
+  res.send('Protected Route');
+});
