@@ -11,6 +11,9 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     res.render('all-posts', { posts });
+
+ // If an error occurs respond with a 500 status code and send the error as a JSON response.
+    
   } catch (err) {
     res.status(500).json(err);
   }
@@ -41,6 +44,9 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
+// login route, it checks if the loggedIn property exists in the req.session object.
+// If it does, it means the user is already logged 
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -49,6 +55,9 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+// signup route, it checks if the loggedIn property exists in the req.session object.
+//  If it does, it means the user is already logged
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {

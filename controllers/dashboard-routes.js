@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
 
+// GET request is made to the homepage, the route handler function is executed.
+
+
 router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
