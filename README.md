@@ -3,7 +3,7 @@
 ## Link
 
 Heroku git URL
-https://git.heroku.com/secure-anchorage-03587.git
+https://secure-anchorage-03587-5fccc376f9b0.herokuapp.com/
 
 ## How to use this website
 
